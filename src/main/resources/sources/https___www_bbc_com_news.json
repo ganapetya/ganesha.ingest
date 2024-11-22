@@ -2,7 +2,7 @@
   "levels":{
     "0":{
       "schema":"ListOfLinksSchema",
-      "linkPattern":"<a\\sdata-testid=\"subNavigationLink\"\\shref=\"(.*?)\"\\sclass=\".*?\">(.*?)<\\/a>",
+      "linkPattern":"<a\\shref=\"(.*?)\"\\sdata-testid=\"subNavigationLink\"\\sclass=\".*?\">(.*?)<\\/a>",
       "linkPrefix":"https://www.bbc.com",
       "titleGroup":"2",
       "urlGroup": "1"
