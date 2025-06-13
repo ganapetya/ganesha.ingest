@@ -1,24 +1,24 @@
 {
-  "levels":{
-    "0":{
-      "schema":"ListOfLinksSchema",
-      "linkPattern":"<a\\shref=\"(.*?)\"\\sdata-testid=\"subNavigationLink\"\\sclass=\".*?\">(.*?)<\\/a>",
-      "linkPrefix":"https://www.bbc.com",
-      "titleGroup":"2",
+  "levels": {
+    "0": {
+      "schema": "ListOfLinksSchema",
+      "linkPattern": "<a\\shref=\"(.*?)\"\\sdata-testid=\"subNavigationLink\"\\sclass=\".*?\">(.*?)<\\/a>",
+      "linkPrefix": "https://www.bbc.com",
+      "titleGroup": "2",
       "urlGroup": "1"
     },
-    "1":{
-      "schema":"ListOfLinksSchema",
-      "linkPattern":"\"title\"\\:\"(.*?)\",\"href\"\\:\"(.*?)\"",
-      "linkPrefix":"https://www.bbc.com",
-      "titleGroup":"1",
+    "1": {
+      "schema": "ListOfLinksSchema",
+      "linkPattern": "\"title\"\\:\"(.*?)\",\"href\"\\:\"(.*?)\"",
+      "linkPrefix": "https://www.bbc.com",
+      "titleGroup": "1",
       "urlGroup": "2"
     },
-    "2":{
-      "schema":"PageSchema",
-      "titlePattern":"<h1\\sclass=\"(.*?)\">(.*?)<!--\\s--><\\/h1>",
-      "paragraphPattern":"<p\\sclass=\"(.*?)\">(?:<(.*?)>)?(.*?)<!--\\s-->(?:<(.*?)>)?<\\/p>",
-      "titleGroup":"2",
+    "2": {
+      "schema": "PageSchema",
+      "titlePattern": "<h1[^>]*>([^<]+)</h1>",
+      "paragraphPattern": "<p\\sclass=\"(.*?)\">(?:<(.*?)>)?(.*?)<!--\\s-->(?:<(.*?)>)?<\\/p>",
+      "titleGroup": "1",
       "paragraphGroup": "3"
     }
   }
