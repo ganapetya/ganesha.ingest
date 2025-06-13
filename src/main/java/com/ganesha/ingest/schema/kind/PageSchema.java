@@ -38,12 +38,21 @@ public class PageSchema extends ParametrizedParsingSchema<ArticlePage>
 
         log.info("Using paragraph pattern: {}", paragraphPattern);
         
-        // Log all paragraph elements to see their structure
-        Pattern pPattern = Pattern.compile("<p[^>]*>.*?</p>", Pattern.DOTALL);
-        Matcher pMatcher = pPattern.matcher(body);
-        while (pMatcher.find()) {
-            log.debug("Found paragraph element: {}", pMatcher.group());
+        if(log.isDebugEnabled()){
+            //Log all paragraph elements to see their structure (for debugging)
+            //this pattern may change per site
+            Pattern pPattern = Pattern.compile("<p[^>]*>.*?</p>", Pattern.DOTALL);
+            Matcher pMatcher = pPattern.matcher(body);
+            while (pMatcher.find()) {
+                log.debug("Found paragraph element: {}", pMatcher.group());
+            }
         }
+        //Log all paragraph elements to see their structure (for debugging)
+        //Pattern pPattern = Pattern.compile("<p[^>]*>.*?</p>", Pattern.DOTALL);
+        //Matcher pMatcher = pPattern.matcher(body);
+        //while (pMatcher.find()) {
+        //    log.debug("Found paragraph element: {}", pMatcher.group());
+        //}
 
         int paragraphGroup = Integer.parseInt(params.get(PARAGRAPH_GROUP));
         List<String> paragraphs = extractPart(body, paragraphPattern, paragraphGroup);
